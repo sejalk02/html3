@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+    <style>
+
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.Container {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.item {
+    border-bottom: 1px solid #ddd;
+}
+
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.header:hover {
+    background-color: #0056b3;
+}
+
+.content {
+    display: none;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+    </style>
+</head>
+<body>
+    <div class="Container">
+        <div class="item">
+            <button class="header">Item 1</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, reiciendis sed. Repellat natus officiis dolore iste laborum ipsam quia repudiandae saepe qui dignissimos!</p>
+            </div>
+        </div>
+        <div class="item">
+            <button class="header">Item 2</button>
+            <div class="content">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium obcaecati vero possimus dicta. Atque quia eveniet rerum doloremque officiis perferendis quis unde natus dolor inventore voluptas mollitia beatae nihil quos repellat corporis, cum tenetur deserunt consequatur cupiditate corrupti error amet optio doloribus. Animi velit officiis numquam vitae neque suscipit blanditiis!</p>
+            </div>
+        </div>
+        <div class="item">
+            <button class="header">Item 3</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ab!</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+    <script>
+        document.querySelector('.Container').addEventListener('click', function(event) {
+    if (event.target.classList.contains('header')) {
+        const content = event.target.nextElementSibling;
+
+      
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+        } else {
+            document.querySelectorAll('.content').forEach(item => {
+                item.style.display = 'none';
+            });
+
+          
+            content.style.display = 'block';
+        }
+    }
+});
+
+
+    </script>
+</body>
+</html>
